@@ -3,7 +3,7 @@ import React from 'react';
 interface IProps{
   userInput:string,
   onChangeInputText: React.ChangeEventHandler<HTMLInputElement>
-  onClickAddTask: React.MouseEventHandler
+  onClickAddTask:()=>void
 }
 const AddTaskForm:React.FC<IProps> = ({
                                         userInput,
