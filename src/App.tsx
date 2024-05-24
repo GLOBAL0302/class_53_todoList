@@ -4,7 +4,7 @@ import AddTaskForm from './components/AddTaskForm/AddTaskForm';
 import Task from './components/Task/Task';
 
 function App() {
-  const[userInput, setUserInput] = React.useState("")
+  const[userInput, setUserInput] = React.useState("");
   const[tasks, setTasks] = React.useState([
     {title: "buy milk", complete: false, id:"1"},
     {title: "walk with dog", complete: false, id:"2"},
@@ -12,20 +12,19 @@ function App() {
   ])
 
   const onChangeInputText = (event:ChangeEvent<HTMLInputElement>)=>{
-    setUserInput(event.target.value)
+    setUserInput(event.target.value);
   }
 
   const onClickAddTask = ()=>{
-    console.log("hi")
-    let id = Math.random().toString()
+    let id = Math.random().toString();
     setTasks((prevState)=>{
-      return [...prevState, {title: userInput, complete: false, id: id}]
+      return [...prevState, {title: userInput, complete: false, id: id}];
     })
   }
 
   const removeTask = (id:string)=>{
     setTasks((prevState)=>{
-      return prevState.filter(task => task.id !==id)
+      return prevState.filter(task => task.id !==id);
     })
   }
   return (

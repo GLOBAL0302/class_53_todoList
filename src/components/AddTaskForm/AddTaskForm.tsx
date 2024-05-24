@@ -2,16 +2,16 @@ import React from 'react';
 
 interface IProps{
   userInput:string,
-  onChangeInputText: React.ChangeEventHandler<HTMLInputElement>
-  onClickAddTask:()=>void
+  onChangeInputText: React.ChangeEventHandler<HTMLInputElement>,
+  onClickAddTask:()=>void;
 }
 const AddTaskForm:React.FC<IProps> = ({
                                         userInput,
                                         onChangeInputText,
                                         onClickAddTask}) => {
   const addTaskForm =(event:React.FormEvent) =>{
-    event.preventDefault()
-    onClickAddTask()
+    event.preventDefault();
+    onClickAddTask();
   }
   return (
     <form id="form" className='mb-3'>
