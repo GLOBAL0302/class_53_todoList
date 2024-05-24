@@ -1,4 +1,7 @@
+import React from 'react';
+
 export interface ITask{
   title: string;
   complete: boolean;
-  id: string; }
+  id: string;
+  removeTask:React.MouseEventHandler}

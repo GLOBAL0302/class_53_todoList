@@ -1,12 +1,15 @@
-import React, {MouseEventHandler} from 'react';
+import React from 'react';
 
 interface IProps{
   userInput:string,
   onChangeInputText: React.ChangeEventHandler<HTMLInputElement>
   onClickAddTask: React.MouseEventHandler
 }
-const AddTaskForm:React.FC<IProps> = ({userInput, onChangeInputText, onClickAddTask}) => {
-  const formSubmit =(event:React.FormEvent) =>{
+const AddTaskForm:React.FC<IProps> = ({
+                                        userInput,
+                                        onChangeInputText,
+                                        onClickAddTask}) => {
+  const addTaskForm =(event:React.FormEvent) =>{
     event.preventDefault()
     onClickAddTask()
   }
@@ -17,7 +20,7 @@ const AddTaskForm:React.FC<IProps> = ({userInput, onChangeInputText, onClickAddT
         <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={userInput} onChange={onChangeInputText}/>
           <div id="emailHelp" className="form-text">Please add your task</div>
       </div>
-      <button type="submit" className="btn btn-primary" onClick={(event)=>{formSubmit(event)}}>Submit</button>
+      <button type="submit" className="btn btn-primary" onClick={(event)=>{addTaskForm(event)}}>Submit</button>
     </form>
   );
 };
